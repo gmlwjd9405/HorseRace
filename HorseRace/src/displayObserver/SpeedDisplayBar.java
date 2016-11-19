@@ -22,6 +22,7 @@ public class SpeedDisplayBar implements StatusObserver {
 		statusTable.add(speedLabel);
 	}
 
+	/** 말의 상태에 따라 SpeedBar의 display를 업데이트 */
 	@Override
 	public void update() {
 		speedLabel.setSize(MAXBAR * horse.getSpeed() / Horse.MAXSPEED, 15);

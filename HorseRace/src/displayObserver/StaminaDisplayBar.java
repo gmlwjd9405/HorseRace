@@ -10,18 +10,20 @@ public class StaminaDisplayBar implements StatusObserver {
 	private final static int MAXBAR = 100;
 	private Horse horse;
 	private JLabel staminaLabel;
-	
+
 	public StaminaDisplayBar(Horse horse, StatusTable statusTable, int i) {
 		this.horse = horse;
 		this.staminaLabel = new JLabel();
-		
-		staminaLabel.setBounds(i*320 + 170, 60, MAXBAR, 15);
+
+		staminaLabel.setBounds(i * 320 + 170, 60, MAXBAR, 15);
 		staminaLabel.setBackground(Color.LIGHT_GRAY);
 		staminaLabel.setOpaque(true);
 		statusTable.add(staminaLabel);
 	}
+
+	/** 말의 상태에 따라 StaminaBar의 display를 업데이트 */
 	@Override
 	public void update() {
-		staminaLabel.setSize(MAXBAR*horse.getStamina()/Horse.MAXSTAMINA, 15);
+		staminaLabel.setSize(MAXBAR * horse.getStamina() / Horse.MAXSTAMINA, 15);
 	}
 }

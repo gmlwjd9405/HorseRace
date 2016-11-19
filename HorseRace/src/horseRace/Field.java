@@ -40,10 +40,10 @@ public class Field extends JPanel implements Runnable {
 			repaint();
 			invalidate();
 		}
-		// raceEndLabel을 배치
+		// EndLabel을 배치
 		ENDLABEL.setBounds(310, 100, 400, 100);
 		ENDLABEL.setFont(new Font("DialogInput", Font.BOLD, 50));
-		ENDLABEL.setForeground(new Color(255,220, 9));
+		ENDLABEL.setForeground(new Color(255, 220, 9));
 	}
 
 	/**
@@ -62,7 +62,7 @@ public class Field extends JPanel implements Runnable {
 		return false;
 	}
 
-	/** 무한루프로 horses를 달리게 하고 repaint */
+	/** 무한루프 1. horses 달리기 2. 변화 감지 3. repaint */
 	public void run() {
 		while (true) {
 			for (int i = 0; i < horses.length; i++) {
@@ -77,7 +77,7 @@ public class Field extends JPanel implements Runnable {
 			}
 
 			try {
-				Thread.sleep(150);
+				Thread.sleep(200);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -103,4 +103,3 @@ public class Field extends JPanel implements Runnable {
 		g.drawImage(background.getImage(), 0, 0, getWidth(), getHeight(), this);
 	}
 }
-

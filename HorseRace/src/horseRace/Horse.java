@@ -9,17 +9,17 @@ import movingStrategy.MovingStrategy;
 public class Horse extends Subject {
 	public final static int MAXSTAMINA = 100;
 	public final static int MAXSPEED = 20;
-	
+
 	public static final int WIDTH = 110;
 	public static final int HEIGHT = 90;
 
 	private MovingStrategy movingStrategy; // Horse이 달리는 전략
 	private HorseImgStrategy horseImgStrategy; // Horse의 종류에 대한 전략
 
+	private String name = null; // Horse의 이름
 	private ImageIcon image; // Horse의 종류에 따른 ImageIcon
 	private int speed = 1; // Horse의 속도
 	private int stamina = MAXSTAMINA;
-	private String name = null; // Horse의 이름
 
 	/** Horse의 생성자. JLabel의 크기지정 */
 	public Horse() {
@@ -51,7 +51,8 @@ public class Horse extends Subject {
 	public void move() {
 		movingStrategy.move(this);
 	}
-	
+
+	// /* setter */
 	public void setStamina(int stamina) {
 		this.stamina = stamina;
 	}
@@ -64,10 +65,11 @@ public class Horse extends Subject {
 		this.name = name;
 	}
 
+	// /* getter */
 	public String getName() {
 		return this.name;
 	}
-	
+
 	public int getStamina() {
 		return this.stamina;
 	}
@@ -88,4 +90,3 @@ public class Horse extends Subject {
 		return this.getLocation().y;
 	}
 }
-
